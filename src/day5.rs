@@ -1,7 +1,6 @@
 use std::io::Read;
 use std::collections::HashSet;
 
-const MY_YEAR: u64 = 2020u64;
 const DATA_PATH: &str = "data/05";
 
 struct Range {
