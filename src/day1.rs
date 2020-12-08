@@ -13,21 +13,21 @@ fn read_and_get_numbers() -> Vec<u64> {
     return numbers;
 }
 
-pub fn part1() -> u64 {
+pub fn part1() -> i64 {
     let numbers = read_and_get_numbers();
     let mut numbers_seen: HashSet<u64> = HashSet::new();
 
     for number in numbers {
         let composite_number = MY_YEAR - number;
         if numbers_seen.contains(&composite_number) {
-            return number * composite_number;
+            return (number * composite_number) as i64;
         }
         numbers_seen.insert(number);
     }
     panic!("[ERROR]: Solution should have been found!");
 }
 
-pub fn part2() -> u64 {
+pub fn part2() -> i64 {
     let numbers = read_and_get_numbers();
     let n = numbers.len();
     let mut numbers_seen: HashSet<u64> = HashSet::new();
@@ -42,7 +42,7 @@ pub fn part2() -> u64 {
             if sum < MY_YEAR {
                 let composite_number = MY_YEAR - sum;
                 if numbers_seen.contains(&composite_number) {
-                    return composite_number * numbers[i] * numbers[j];
+                    return (composite_number * numbers[i] * numbers[j]) as i64;
                 }
             }
         }

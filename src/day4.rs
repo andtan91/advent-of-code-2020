@@ -88,16 +88,18 @@ fn is_passport_valid_2(passport: &str) -> bool {
 
 }
 
-pub fn part1() -> u64 {
-    return read_in_passports()
+pub fn part1() -> i64 {
+    let sum: u64 = read_in_passports()
         .iter()
         .map(|s| if is_passport_valid(s) {1} else {0})
         .sum();
+    sum as i64
 }
 
-pub fn part2() -> u64 {
-    return read_in_passports()
+pub fn part2() -> i64 {
+    let sum: u64 = read_in_passports()
         .iter()
         .map(|s| if is_passport_valid_2(s) {1} else {0})
         .sum();
+    sum as i64
 }

@@ -45,7 +45,7 @@ fn find_seat_id(partitioning: &str) -> u64 {
     row * 8 + seat
 }
 
-pub fn part1() -> u64 {
+pub fn part1() -> i64 {
 
     let mut file = std::fs::File::open(DATA_PATH).unwrap();
     let mut contents = String::new();
@@ -55,10 +55,10 @@ pub fn part1() -> u64 {
         .map(|s| find_seat_id(s))
         .max()
         .unwrap();
-    return result;
+    result as i64
 }
 
-pub fn part2() -> u64 {
+pub fn part2() -> i64 {
 
     let mut file = std::fs::File::open(DATA_PATH).unwrap();
     let mut contents = String::new();
@@ -83,7 +83,7 @@ pub fn part2() -> u64 {
         let prev_seat = &missing_id - 1;
         let next_seat = &missing_id + 1;
         if seat_ids_set.contains(&prev_seat) && seat_ids_set.contains(&next_seat) && !seat_ids_set.contains(&missing_id) {
-            return missing_id;
+            return missing_id as i64;
         }
     }
     panic!("No missing ID found!");

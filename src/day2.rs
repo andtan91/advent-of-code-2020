@@ -53,9 +53,9 @@ fn check_if_valid1(str_line: String) -> bool {
     return false;
 }
 
-pub fn part1() -> u64 {
+pub fn part1() -> i64 {
 
-    let mut result = 0u64;
+    let mut result = 0i64;
 
     let lines = read_and_get_password();
 
@@ -64,7 +64,7 @@ pub fn part1() -> u64 {
             result += 1;
         }
     }
-    return result;
+    result
 }
 
 fn check_if_valid2(str_line: String) -> bool {
@@ -95,9 +95,9 @@ fn check_if_valid2(str_line: String) -> bool {
 
 }
 
-pub fn part2() -> u64 {
+pub fn part2() -> i64 {
 
-    let mut result = 0u64;
+    let mut result = 0i64;
 
     let lines = read_and_get_password();
 

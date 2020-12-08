@@ -46,16 +46,16 @@ impl UniqueChar for String {
 }
 
 
-pub fn part1() -> u64 {
+pub fn part1() -> i64 {
     let groups = read_in_groups();
     let sum_result: usize = groups
         .iter()
         .map(|g| g.unique_counts())
         .sum();
-    return sum_result as u64;
+    return sum_result as i64;
 }
 
-pub fn part2() -> u64 {
+pub fn part2() -> i64 {
     let groups = read_in_groups_unsplit();
     
     let mut result = 0;
@@ -77,5 +77,5 @@ pub fn part2() -> u64 {
             .sum();
         result += group_sum;
     }
-    result
+    result as i64
 }

@@ -42,16 +42,16 @@ pub fn trees_hit_during_tobbagan(col_increment: usize, row_increment: usize) -> 
     return trees_hit;
 }
 
-pub fn part1() -> u64 {
-    return trees_hit_during_tobbagan(3, 1);
+pub fn part1() -> i64 {
+    trees_hit_during_tobbagan(3, 1) as i64
 }
 
-pub fn part2() -> u64 {
+pub fn part2() -> i64 {
     let params = vec![(1,1), (3,1), (5,1), (7,1), (1,2)];
     let mut result = 1u64;
     for (col,row) in params {
         let trees_hit = trees_hit_during_tobbagan(col, row);
         result *= trees_hit;
     }
-    return result;
+    result as i64
 }

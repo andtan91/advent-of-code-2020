@@ -59,9 +59,10 @@ fn recursive_search(bags: &BagMapping, current_bag: &str) -> bool {
     }
 }
 
-pub fn part1() -> u64 {
+pub fn part1() -> i64 {
     let bags = read_in_rules();
-    bags.keys().map(|k| if recursive_search(&bags, k) {1} else {0}).sum()
+    let sum: u64 = bags.keys().map(|k| if recursive_search(&bags, k) {1} else {0}).sum();
+    sum as i64
 }
 
 fn recursive_search_count(bags: &BagMapping, current_bag: &str) -> u64 {
@@ -77,7 +78,7 @@ fn recursive_search_count(bags: &BagMapping, current_bag: &str) -> u64 {
     }
 }
 
-pub fn part2() -> u64 {
+pub fn part2() -> i64 {
     let bags = read_in_rules();
-    recursive_search_count(&bags, DESIRED_BAG)
+    recursive_search_count(&bags, DESIRED_BAG) as i64
 }
