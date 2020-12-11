@@ -11,6 +11,7 @@ mod day7;
 mod day8;
 mod day9;
 mod day10;
+mod day11;
 
 fn help() {
     println!("usage: 
@@ -49,6 +50,9 @@ fn run_days_problems(day: usize) {
         },
         10 => {
             (day10::part1(), day10::part2())
+        },
+        11 => {
+            (day11::part1(), day11::part2())
         }
         _ => {
             panic!("No solutions for this day yet!")
@@ -65,7 +69,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     match args.len() {
         1 => {
-            for day in 1..11 {
+            for day in 1..12 {
                 run_days_problems(day);
             }
         }
