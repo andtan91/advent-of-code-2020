@@ -9,6 +9,7 @@ edition = "2018"
 
 [dependencies]
 regex = "1.4.2"
+hashbrown = "0.3"
 
 [profile.release]
 lto = "fat"

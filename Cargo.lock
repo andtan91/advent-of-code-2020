@@ -4,6 +4,7 @@
 name = "advent-of-code"
 version = "0.1.0"
 dependencies = [
+ "hashbrown",
  "regex",
 ]
 
@@ -15,6 +16,12 @@ checksum = "7404febffaa47dac81aa44dba71523c9d069b1bdc50a77db41195149e17f68e5"
 dependencies = [
  "memchr",
 ]
+
+[[package]]
+name = "hashbrown"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "29fba9abe4742d586dfd0c06ae4f7e73a1c2d86b856933509b269d82cdf06e18"
 
 [[package]]
 name = "lazy_static"
